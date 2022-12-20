@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block content%}
+
+    
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polling</title>
+    <!--Bootstrap CSS-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  </head>
+  <body>
+<div class="row">
+    <div class="col-lg-8 col-lg-offset-2">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Poll Result</h3>
+            </div>
+
+            <div class="panel-body">
+                <h3>{{ poll.question }}</h3>
+            </div>
+
+            <ul class="list-group">
+                <li class="list-group-item">{{ poll.option_one }} &mdash; <strong>{{ poll.option_one_count }}</strong></li>
+                <li class="list-group-item">{{ poll.option_two }} &mdash; <strong>{{ poll.option_two_count }}</strong></li>
+                <li class="list-group-item">{{ poll.option_three }} &mdash; <strong>{{ poll.option_three_count }}</strong></li>
+                <li class="list-group-item">{{ poll.option_four }} &mdash; <strong>{{ poll.option_four_count }}</strong></li>
+            </ul>
+
+            <div class="panel-footer" style="margin-left: 10px;">
+            </br>
+                Total &mdash; <strong>{{ poll.total }}</strong>
+            </div>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>
+{% endblock %}
